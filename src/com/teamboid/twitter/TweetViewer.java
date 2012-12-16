@@ -190,8 +190,8 @@ public class TweetViewer extends MapActivity {
 	}
 
 	@Override
-	public void onPause() {
-		super.onPause();
+	public void onStop() {
+		super.onStop();
 		twhh.stop(this);
 	}
 

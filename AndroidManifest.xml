@@ -170,12 +170,6 @@
 		</activity>
 
 		<!-- Tweet Widget Services -->
-		<service android:name="com.teamboid.twitter.tweetwidgets.TweetWidgetService"
-			android:exported="false">
-			<intent-filter>
-				<action android:name="com.teamboid.twitter.ACTION_TWEET_WIDGET" />
-			</intent-filter>
-		</service>
 
 		<receiver android:name="com.teamboid.twitter.services.SendTweetStarter"
 			android:exported="false">
@@ -186,7 +180,7 @@
 
 		<!-- Internal Tweet Widgets -->
 		<service android:name="com.teamboid.twitter.YouTubeWidget"
-			android:exported="false" android:label="@string/youtube_embed">
+			android:exported="true" android:label="@string/youtube_embed">
 			<intent-filter>
 				<action android:name="com.android.ACTION_EMBED" />
 
@@ -200,7 +194,7 @@
 			</intent-filter>
 		</service>
 		<service android:name="com.teamboid.twitter.TimeisWidget"
-			android:exported="false">
+			android:exported="true">
 			<intent-filter>
 				<action android:name="com.android.ACTION_EMBED" />
 				<data android:host="www.time.is" android:pathPattern="/.*_in_.*" android:scheme="http" />
@@ -289,7 +283,7 @@
 		<activity android:name="com.crittercism.NotificationActivity" />
 		
 		<!-- Samsung Multi-Window Support. Cheers Paul@MoDaCo! -->
-		<uses-library required="false" name="com.sec.android.app.multiwindow"> </uses-library>
+		<uses-library android:required="false" android:name="com.sec.android.app.multiwindow"> </uses-library>
 		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
 		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:resource="@dimen/app_defaultsize_w" />
 		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@dimen/app_defaultsize_h" />
